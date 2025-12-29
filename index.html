@@ -169,9 +169,25 @@
         formMessage.textContent = '';
       }, 5000);
     });
-  </script>
+  <script>
+  // Skills toggle
+  document.querySelectorAll('.skill-item').forEach(item => {
+    item.addEventListener('click', () => {
+      // Toggle active class on clicked item
+      item.classList.toggle('active');
+      
+      // Optional: Close other open descriptions (remove if you want multiple open)
+      document.querySelectorAll('.skill-item').forEach(other => {
+        if (other !== item) {
+          other.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
+
 
 
 
